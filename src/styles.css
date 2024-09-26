@@ -30,44 +30,164 @@ body {
   overflow: hidden;
   padding: 3rem 2rem;
 }
-header{
+header {
   background: var(--Soft-red);
   border-radius: 1rem;
-  margin-block-start: 3rem;
+  margin-block-start: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
-header p{
+header p {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-header p span:first-child{
+header p span:first-child {
   color: var(--Cream);
   font-size: 1.3rem;
   font-weight: 400;
 }
-header p span:last-child{
+header p span:last-child {
   color: var(--Cream);
   font-size: 1.9rem;
   font-weight: 700;
 }
 
-header img{
+header img {
   width: 5rem;
   height: 5rem;
-  animation: move infinite 5s ease-in-out;
+  animation: moveY infinite 5s ease-in-out;
 }
 
-@keyframes move {
-  0%,100%{
+main {
+  background: var(--Very-pale-orange);
+  width: 100%;
+  margin-block-start: 2rem;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+}
+main h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--Dark-brown);
+  font-weight: 700;
+  animation: moveX infinite 5s ease-in-out;
+}
+
+main .container {
+  width: 100%;
+}
+main .container ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end;
+  height: 25rem;
+  padding-block-end: 2rem;
+  border-bottom: 3px solid var(--Cream);
+  margin-block-end: 2.5rem;
+}
+main .container ul li {
+  width: 3rem;
+  text-align: center;
+  position: relative;
+  color: var(--Medium-brown);
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+main .container ul li div {
+  content: "";
+  width: 3rem;
+  /* height: 4rem; */
+  background: var(--Soft-red);
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  opacity: 0.1;
+  animation: opacity infinite 3000ms ease-in-out;
+}
+
+main .container ul li:nth-child(3) div {
+  background: var(--Cyan);
+}
+
+main div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 1rem;
+}
+main div p {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main div p:nth-child(1) span:first-child {
+  color: var(--Medium-brown);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+main div p:nth-child(1) span:last-child {
+  color: var(--Dark-brown);
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+main div p:nth-child(2) {
+  align-items: end;
+  justify-content: end;
+  gap: 0;
+  padding-block-start: 1.5rem;
+}
+main div p:nth-child(2) span:first-child {
+  color: var(--Dark-brown);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+main div p:nth-child(2) span:last-child {
+  color: var(--Medium-brown);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes moveY {
+  0%,
+  100% {
     transform: translateY(1rem);
   }
-  50%{
+  50% {
     transform: translateY(-1rem);
   }
-  
 }
 
+@keyframes moveX {
+  0%,
+  100% {
+    transform: translateX(1rem);
+  }
+  50% {
+    transform: translateX(-1rem);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
