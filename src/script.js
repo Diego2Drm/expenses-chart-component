@@ -37,10 +37,14 @@ container.appendChild(newList);
 items.forEach((item) => {
   const listItems = document.createElement("li");
   const percentage = document.createElement("div");
+  const span = document.createElement("span");
+  span.classList.add("percentage");
 
   listItems.textContent = item.day;
   percentage.style.height = item.amount * 3 + "px";
+  span.textContent = `$${item.amount}`;
 
+  percentage.appendChild(span)
   listItems.appendChild(percentage);
   newList.appendChild(listItems);
 });
